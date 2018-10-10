@@ -1,21 +1,41 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-    state = {
-        number: 0
+    constructor(props) {
+        super(props)
+        this.state = {
+            number: 0
+        }
     }
 
+    // handleIncrease = () => {
+    //     this.setState({
+    //         number: this.state.number + 1
+    //     });
+    // }
+
+    // handleDecrease = () => {
+    //     this.setState({
+    //         number: this.state.number - 1
+    //     });
+    // }
+
+  
     handleIncrease = () => {
+        const { number } = this.state;
         this.setState({
-            number: this.state.number + 1
+          number: number + 1
         });
-    }
-
-    handleDecrease = () => {
-        this.setState({
-            number: this.state.number - 1
-        });
-    }
+      }
+    
+      // setState 에 updater 함수를 만들어서 전달
+      handleDecrease = () => {
+        this.setState(
+          ({ number }) => ({
+            number: number - 1
+          })
+        );
+      }
 
     render() {
         return (
