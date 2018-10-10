@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class MyName extends Component {
+    static defaultProps = {
+        name : '기본이름1'
+    }
     render() {
         return (
             <div>
@@ -9,5 +12,8 @@ class MyName extends Component {
         )
     }
 }
+MyName.defaultProps = {
+    name: '기본이름2' // 위의 내용 덮어씀
+};
 
 export default MyName;

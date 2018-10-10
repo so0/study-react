@@ -3,7 +3,10 @@ import MyName from './MyName';
 class App extends Component {
   render() {
     return (
-      <MyName name="리액트"></MyName>
+      <div>
+        <MyName name="리액트"></MyName>
+        <MyName></MyName>
+      </div>
     );
   }
 }
