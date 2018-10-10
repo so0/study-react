@@ -10,9 +10,19 @@ class App extends Component {
   //   };
   //   return <div style={style}>안녕하세요!</div>;
     return (
-    <div className="App">
-      리액트
-    </div>
+      <div>
+        <div className="App">
+          리액트
+        </div>
+
+        <div>
+          {/* 주석 */}
+          <h1
+          // 태그 사이 주석
+          > 리액트~</h1>
+        </div>
+
+      </div>
     );
   }
 }
