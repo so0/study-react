@@ -38,6 +38,24 @@ class App extends Component {
       information: information.filter(info => info.id !== id)
     })
   }
+
+  handelUpdate = (id , data) => {
+    const { information } = this.state;
+    this.setState({
+      information: information.map(
+        info => {
+          if(info.id === id) {
+            return {
+              id,
+              ...data, // name, phone
+            }
+          }
+          return info;
+        }
+      )
+    })
+  }
+ 
   render() {
     return (
       <div className="App">
@@ -45,7 +63,8 @@ class App extends Component {
         {/* {JSON.stringify(this.state.information)} */}
         <PhoneInfoList 
           data={this.state.information}
-          onRemove={this.handelRemove}/>
+          onRemove={this.handelRemove}
+          onUpdate={this.handelUpdate}/>
       </div>
     );
   }

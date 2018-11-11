@@ -10,7 +10,7 @@ class PhoneInfoList extends Component {
     }
 
     render() {
-        const { data, onRemove } = this.props;
+        const { data, onRemove, onUpdate } = this.props;
 
         
         // info 배열 => PhoneInfo 컴포넌트로 변환
@@ -20,6 +20,7 @@ class PhoneInfoList extends Component {
                     onRemove={onRemove} 
                     info={info} 
                     key={info.id} 
+                    onUpdate={onUpdate}
                 />
             )
         );
