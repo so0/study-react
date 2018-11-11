@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PhoneForm from './components/PhoneForm'
+import PhoneForm from './components/PhoneForm';
+import PhoneInfoList from './components/PhoneInfoList';
 class App extends Component {
   id = 0; // id는 렌더링 대상이 아니기 때문에 state로 넣지 않아도 된다.
   state = {
@@ -34,7 +35,8 @@ class App extends Component {
     return (
       <div className="App">
         <PhoneForm onCreate={this.handleCreate}/>
-        {JSON.stringify(this.state.information)}
+        {/* {JSON.stringify(this.state.information)} */}
+        <PhoneInfoList data={this.state.information}/>
       </div>
     );
   }
